@@ -1,0 +1,40 @@
+!!! 5
+%html
+  %head
+    %meta{name:"viewport", content:"width=device-width, initial-scale=1"}
+    %link{rel:"stylesheet", type:"text/css", href:"https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"}
+    %link{rel:"stylesheet", href:"https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"}
+    %script{type:"text/javascript", src:"http://code.jquery.com/jquery-1.11.1.min.js"}
+    / %script{type:"text/javascript", src:"http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"}
+    %script{type:"text/javascript", src:"https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"}
+    %link{rel:"stylesheet", type:"text/css", href:"halstyle.css"}
+    %script{type:"text/javascript", src:"halsensors.js"}
+    %title Hal Sensors
+  %body
+    .navbar.navbar-inverse.navbar-fixed-top{role:"navigation"}
+      .container-fluid
+        .navbar-header
+          %button.navbar-toggle.collapsed{"data-toggle"=>"collapse", "data-target"=>".navbar-collapse"}
+            %span.sr-only Menu
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{href:"."} 
+            %i.fa.fa-area-chart
+            Hal sensors
+        .navbar-collapse.collapse
+          %ul.nav.navbar-nav.navbar-right#graph-nav
+
+    #content.container-fluid
+      .row
+        .col-12.main
+          %h1#graph-title
+          %img#graph-plot
+    .footer
+      .container
+        %p.text-muted
+          = Time.now.strftime("Last update: %d/%m/%Y %H:%M")
+          &nbsp;&nbsp;
+          %a{href:"https://github.com/urlab/hal", target:"_blank"}
+            %i.fa.fa-github.fa-2x
+            UrLab's HAL
